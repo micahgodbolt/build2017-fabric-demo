@@ -41,6 +41,11 @@ class App extends Component {
           />
         }
 
+         <ProgressIndicator
+          label= {`${this.state.todo ? 0 : 1 * 100} % Done`}
+          percentComplete= { this.state.todo ? 0 : 1 }
+        />
+
       </Fabric>
     );
   }
