@@ -34,12 +34,10 @@ class App extends Component {
           onClick={() => this.addTodo(this.field._latestValue)}
         />
 
-        { this.state.todo &&
         <Checkbox
           label={ this.state.todo}
           onChange={() => alert("Removed!")}
           />
-        }
 
       </Fabric>
     );
