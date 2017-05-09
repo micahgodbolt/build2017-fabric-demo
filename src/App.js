@@ -19,7 +19,13 @@ class App extends Component {
           label="Enter Todo"
           ref={ (t) => this.field = t}
           />
-          
+
+        <PrimaryButton
+          iconProps={{iconName:"Add"}}
+          text="Add Todo"
+          onClick={() => alert(this.field._latestValue)}
+        />
+
       </Fabric>
     );
   }
