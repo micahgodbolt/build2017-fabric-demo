@@ -37,7 +37,7 @@ class App extends Component {
         { this.state.todo &&
         <Checkbox
           label={ this.state.todo}
-          onChange={() => alert("Removed!")}
+          onChange={() => this.removeTodo()}
           />
         }
 
@@ -48,6 +48,12 @@ class App extends Component {
   addTodo = (todo) => {
     this.setState( {
       todo
+    })
+  }
+
+  removeTodo = () => {
+    this.setState( {
+      todo: null
     })
   }
 }
