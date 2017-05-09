@@ -11,6 +11,14 @@ import {
 } from "office-ui-fabric-react";
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      todo: null
+    }
+  } 
+
   render() {
     return (
       <Fabric className="App">
@@ -23,11 +31,24 @@ class App extends Component {
         <PrimaryButton
           iconProps={{iconName:"Add"}}
           text="Add Todo"
-          onClick={() => alert(this.field._latestValue)}
+          onClick={() => this.addTodo(this.field._latestValue)}
         />
+
+        { this.state.todo &&
+        <Checkbox
+          label={ this.state.todo}
+          onChange={() => alert("Removed!")}
+          />
+        }
 
       </Fabric>
     );
+  }
+
+  addTodo = (todo) => {
+    this.setState( {
+      todo
+    })
   }
 }
 
